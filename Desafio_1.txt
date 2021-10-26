@@ -1,0 +1,26 @@
+Um Sistema de Controle de Versão (VCS- Version Control System) para Tecnologia da Informação, é um software capaz de gerenciar versões de um documento qualquer.No caso da TI, versões de Softwares.
+É uma ferramenta que ajuda as equipes no gerenciamento de versoes/alteraçõe em codigo fonte durante seu desenvolvimento.
+Ele manteḿ registro de todas as alterações efetuadas no código, desta forma pode-se voltar a uma versão anterior em caso de problemas.
+Pode se trabalhar em vaersões paralelas simultaneamente ou partes separadas do código fonte sem afetar diretamente a aplicação de produção.
+
+Vantages no uso de um VCS:
+-1 Segurança
+Somente pessoas autorizadas podem trabalhar no código, evitando cópia não autorizada ou alterações indevidas.
+
+-2 Trabalho em equipe
+Permite que diversos profissionais trabalhaem ao mesmo tempo contribuindo cada um, com recusros diferentes.
+
+-3 Histórico
+Permite manter e analisar o histórico do desenvolvimento desde seu inicio, podendo resgatar versões estaveis ou analisar recursos utilizados por conta de bugs
+
+-4 Rastreabilidade
+É capaz de rastrear cada alteração feita no software e conectar ao software de gestão de projetos e rastreamento de bugs, é capaz de anotar cada alteração com uma mensagem descrevendo o objetivo da mudança que ajuda com a análise de causa raiz e outras análises forenses.
+
+-5 Confiança
+O uso de repositórios remotos (na nuvem) ajuda a não perder arquivos por eventos inesperados. Além disso, e possível fazer novos projetos sem danificar o desenvolvimento do atual.
+
+
+3 exemplos de VCS são:
+Git
+SVN
+CVS (Sistema de Versões Concorrente)
