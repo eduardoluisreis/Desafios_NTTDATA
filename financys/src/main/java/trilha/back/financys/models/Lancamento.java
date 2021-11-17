@@ -1,5 +1,7 @@
-package trilha.back.financys;
+package trilha.back.financys.models;
 
+
+import java.util.Objects;
 
 public class Lancamento {
 
@@ -32,6 +34,10 @@ public class Lancamento {
      void pendente(){
          this.paid = false;
          
+     }
+
+     void name(String salario){
+
      }
 
     public Lancamento() {  //Construtor Vazio
@@ -111,13 +117,26 @@ public class Lancamento {
     
     public void setCategoryid(Long categoryid){
     
-    }    
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lancamento that = (Lancamento) o;
+        return paid == that.paid && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(type, that.type) && Objects.equals(amount, that.amount) && Objects.equals(date, that.date) && Objects.equals(categoryid, that.categoryid);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, type, amount, date, paid, categoryid);
+    }
 
     @Override
     public String toString(){
-        return "Id: " + this.getId() + this.getName() + "Description: " + this.getDescription()
-                + "Type: " + this.getType() + "Amount: " + this.getAmount() + "Date: " + this.getDate()
-                + "Paid: " + this.getPaid() + "CategoryId: " + this.getCategoryid();
+        return "Id: " + "Name: " + "Description: " + "Type: " + "Amount: "
+                + "Date: " + "Paid: " + "CategoryId: ";
     }
+
 
 }
