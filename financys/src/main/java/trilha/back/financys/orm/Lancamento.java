@@ -25,7 +25,6 @@ public class Lancamento {
     @Column(nullable = false)
     private String date;
 
-
     private Long categoryid;
 
     @Column(nullable = false)
@@ -96,26 +95,29 @@ public class Lancamento {
         this.categoryid = categoryid;
     }
 
-    public boolean isPago() {
+    public boolean getPago() {
         return pago;
     }
 
-    public void setPago(boolean pago) {
+    public void isPago(boolean pago) {
         this.pago = pago;
     }
 
+    public void setId(Long id) {
+    }
 
-//    @Override
-//    public String toString() {
-//        return "Lancamento{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", description='" + description + '\'' +
-//                ", type='" + type + '\'' +
-//                ", amount='" + amount + '\'' +
-//                ", date='" + date + '\'' +
-//                ", categoryid=" + categoryid +
-//                ", pago=" + pago +
-//                '}';
-//    }
+
+    @Override
+    public String toString() {
+        return "Lancamento{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                ", amount='" + amount + '\'' +
+                ", date='" + date + '\'' +
+                ", categoryid=" + categoryid +
+                ", pago=" + pago +
+                '}';
+    }
 }

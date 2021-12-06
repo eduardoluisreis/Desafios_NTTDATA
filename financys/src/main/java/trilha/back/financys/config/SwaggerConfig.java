@@ -27,6 +27,7 @@ public class SwaggerConfig {
                 .apiInfo(metaInfo());
     }
 
+    @org.jetbrains.annotations.NotNull
     private ApiInfo metaInfo(){
         ApiInfo apiInfo = new ApiInfo(
                 "Financys Application API REST",

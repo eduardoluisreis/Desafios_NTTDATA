@@ -1,63 +1,59 @@
 package trilha.back.financys.controller;
 
-
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import trilha.back.financys.models.Categoria;
-import trilha.back.financys.models.Lancamento;
-
-import java.util.ArrayList;
-import java.util.List;
+import trilha.back.financys.Repository.LancamentoRepository;
+import trilha.back.financys.orm.Lancamento;
 
 @RestController
-@RequestMapping("lancamentos")
+@ResponseBody
+@RequestMapping(value = "/lancamentos")
+@Api("FinancysApplication")
+@CrossOrigin(origins = "*")
 public class LancamentoController {
 
-    private ArrayList<Lancamento>lista = new ArrayList<>();
+    @Autowired
+    private LancamentoRepository repository;
 
     @PostMapping("/salvar")
-    public ResponseEntity<Lancamento> save(@RequestBody Lancamento lancamentoBody){
-        var lancamento = new Lancamento();
-
-        lancamento.setId(lancamentoBody.getId());
-        lancamento.setName(lancamentoBody.getName());
-        lancamento.setDescription(lancamentoBody.getDescription());
-        lancamento.setType(lancamentoBody.getType());
-        lancamento.setAmount(lancamentoBody.getAmount());
-        lancamento.setDate(lancamentoBody.getDate());
-
-        lista.add(lancamento);
-
-        return ResponseEntity.ok(lancamento);
+    @ApiOperation(value = "Salva a lista de Lancamentos")
+    public ResponseEntity<Object> save(@RequestBody Lancamento lancamentoBody){
+        repository.save(lancamentoBody);
+        return ResponseEntity.created(null).build();
     }
 
-    @GetMapping(path ="/")
-    public ResponseEntity<List<Lancamento>> getLista(){
-        return ResponseEntity.ok(lista);
+    @GetMapping(path ="/ler")
+    @ApiOperation(value = "Retornar a lista de Lancamentos")
+    public ResponseEntity<Object> getLista(){
+
+        return ResponseEntity.ok(repository.findAll());
     }
 
+    @GetMapping(path = "ler/{id}")
+    public ResponseEntity<Object> getLancamento(@PathVariable Long id){
+        return ResponseEntity.ok(repository.findById(id));
+    }
 
-//    @PatchMapping(path = "/{id}")
-//    public ResponseEntity<Lancamento> update(@PathVariable Long id, @RequestBody Lancamento lancamentoBody){
-//
-//        var idlancamento = Long.valueOf(id).intValue();
-//        var item = lista.get(idlancamento);
-//
-//        item.setId(lancamentoBody.getId());
-//        item.setName(lancamentoBody.getName());
-//        item.setDescription(lancamentoBody.getDescription());
-//        item.setType(lancamentoBody.getType());
-//        item.setAmount(lancamentoBody.getAmount());
-//        item.setDate(lancamentoBody.getDate());
-//
-//        return ResponseEntity.ok(item);
-//    }
-
+    @ApiOperation(value = "Altera na lista de Lancamentos")
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<Lancamento> updateid(@PathVariable("id") Long id , @RequestBody Lancamento lancamento){
-        var idlancamento = Long.valueOf(id - 1).intValue();
+    public ResponseEntity<Object> updateid(@PathVariable("id") Long id , @RequestBody Lancamento lancamentoBody){
 
-        return ResponseEntity.ok(lancamento);
+        Lancamento aux = repository.findById(id).get();
+        aux.setName(lancamentoBody.getName());
+        aux.setDescription(lancamentoBody.getDescription());
+        repository.save(aux);
+
+        return ResponseEntity.ok(lancamentoBody);
+    }
+
+    @DeleteMapping(value = "/deletar/{id}")
+    public ResponseEntity<Object> lancamentoDeletar(@PathVariable("id")Long id){
+        repository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
     }
 
 }
