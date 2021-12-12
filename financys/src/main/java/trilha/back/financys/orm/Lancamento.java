@@ -1,8 +1,6 @@
 package trilha.back.financys.orm;
 
 
-import trilha.back.financys.orm.Categoria;
-
 import javax.persistence.*;
 
 @Entity //Esta anotação informa ao Sprimg que esta classe é uma entidade, uma classe que será mapeada para uma tabela no BD
@@ -32,11 +30,11 @@ public class Lancamento {
     Categoria categoryid;
 
     @Column(nullable = false)
-    private boolean pago;
+    private boolean paid;
 
     public Lancamento() {}
 
-    public Lancamento(Long id, String name, String description, String type, String amount, String date, Categoria categoryid, boolean pago) {
+    public Lancamento(Long id, String name, String description, String type, String amount, String date, Categoria categoryid, boolean paid) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -44,7 +42,7 @@ public class Lancamento {
         this.amount = amount;
         this.date = date;
         this.categoryid = categoryid;
-        this.pago = pago;
+        this.paid = paid;
     }
 
     public Long getId() {
@@ -99,12 +97,12 @@ public class Lancamento {
         this.categoryid = categoryid;
     }
 
-    public boolean getPago() {
-        return pago;
+    public boolean getPaid() {
+        return paid;
     }
 
-    public void isPago(boolean pago) {
-        this.pago = pago;
+    public void isPaid(boolean paid) {
+        this.paid = paid;
     }
 
     public void setId(Long id) {
@@ -121,7 +119,7 @@ public class Lancamento {
                 ", amount='" + amount + '\'' +
                 ", date='" + date + '\'' +
                 ", categoryid=" + categoryid +
-                ", pago=" + pago +
+                ", paid=" + paid +
                 '}';
     }
 }

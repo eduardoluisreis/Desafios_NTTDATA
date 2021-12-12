@@ -30,7 +30,7 @@ public class LancamentoService {
         lancamento1.setType(lancamento.getType());
         lancamento1.setAmount(lancamento.getAmount());
         lancamento1.setDate(lancamento.getDate());
-        lancamento1.isPago(lancamento.getPago());
+        lancamento1.isPaid(lancamento.getPaid());
         lancamento1.setCategoryid(lancamento.getCategoryid());
 
         lancamento1 = lancamentoRepository.save(lancamento1);
@@ -68,7 +68,7 @@ public class LancamentoService {
         lancamentoToUpdate.setType(lancamentoToUpdateRequest.getType());
         lancamentoToUpdate.setAmount(lancamentoToUpdateRequest.getAmount());
         lancamentoToUpdate.setDate(lancamentoToUpdateRequest.getDate());
-        lancamentoToUpdate.isPago(lancamentoToUpdateRequest.getPago());
+        lancamentoToUpdate.isPaid(lancamentoToUpdateRequest.getPaid());
         lancamentoToUpdate.setCategoryid(lancamentoToUpdateRequest.getCategoryid());
 
 

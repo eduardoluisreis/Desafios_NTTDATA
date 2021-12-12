@@ -11,7 +11,6 @@ import trilha.back.financys.orm.Lancamento;
 import trilha.back.financys.service.LancamentoService;
 
 @RestController
-//@ResponseBody
 @RequestMapping(value = "/lancamentos")
 @Api("FinancysApplication")
 @CrossOrigin(origins = "*")

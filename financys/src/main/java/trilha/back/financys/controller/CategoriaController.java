@@ -49,19 +49,6 @@ public class CategoriaController {
 
         return ResponseEntity.ok(categoriaBody);
 
-//        Categoria categoria = repository.findById(id).orElseThrow();
-//
-//        //Atualizar: Passo 2 :  Atualizar os dados que vem do usuario e passa para os dados do banco de dados;
-//        categoria.setDescription(categoriaBody.getDescription());
-//        categoria.setName(categoriaBody.getName());
-//
-//        //Atualizar: Passo 3 :  Salva o objeto atualizado no dados do banco de dados;
-//        repository.save(categoria);
-////        var item = lista.get(Integer.parseInt(String.valueOf(id)));
-////          item.setName(categoria.getName());
-////          item.setDescription(categoria.getDescription());
-//
-//        return ResponseEntity.ok(categoria);
     }
 
     @DeleteMapping(value = "/deletar/{id}")

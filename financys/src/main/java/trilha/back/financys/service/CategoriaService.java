@@ -15,14 +15,11 @@ import java.util.Optional;
 public class CategoriaService {
     @Autowired
     private CategoriaRepository repository;
-    @Autowired
-    private CategoriaRepository cataRepository;
-    //private Object NotFoundException;
 
     public Long createNewCategoria(Categoria categoria){
         Categoria categoria1 = new Categoria();
 
-        categoria1.setId(categoria.getId());
+        //categoria1.setId(categoria.getId());
         categoria1.setName(categoria.getName());
         categoria1.setDescription(categoria.getDescription());
 
