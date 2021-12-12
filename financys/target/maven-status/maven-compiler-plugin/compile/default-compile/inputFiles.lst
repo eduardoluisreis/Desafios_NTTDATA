@@ -1,0 +1,12 @@
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\config\SwaggerConfig.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\service\LancamentoService.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\FinancysApplication.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\exceptions\LancamentoNotFoundException.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\exceptions\CategoriaNotFoundException.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\orm\Lancamento.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\controller\CategoriaController.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\Repository\CategoriaRepository.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\orm\Categoria.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\controller\LancamentoController.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\Repository\LancamentoRepository.java
+C:\Users\eferrere\Projetos\Desafios_NTTDATA\financys\src\main\java\trilha\back\financys\service\CategoriaService.java

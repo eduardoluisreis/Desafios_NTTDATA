@@ -1,0 +1,12 @@
+trilha\back\financys\orm\Categoria.class
+trilha\back\financys\controller\LancamentoController.class
+trilha\back\financys\orm\Lancamento.class
+trilha\back\financys\exceptions\LancamentoNotFoundException.class
+trilha\back\financys\service\LancamentoService.class
+trilha\back\financys\config\SwaggerConfig.class
+trilha\back\financys\exceptions\CategoriaNotFoundException.class
+trilha\back\financys\FinancysApplication.class
+trilha\back\financys\controller\CategoriaController.class
+trilha\back\financys\Repository\LancamentoRepository.class
+trilha\back\financys\Repository\CategoriaRepository.class
+trilha\back\financys\service\CategoriaService.class
