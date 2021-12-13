@@ -40,7 +40,6 @@ public class CategoriaController {
     @ApiOperation(value = "Altera itens na lista de categorias")
     @PatchMapping(value = "/alterar/{id}")
     public ResponseEntity<Object> updateid(@PathVariable("id") Long id , @RequestBody Categoria categoriaBody){
-       //Atualizar: Passo 1 : Buscar Dado na base de dados que deseja atualizar
 
         Categoria aux = repository.findById(id).get();
         aux.setName(categoriaBody.getName());
