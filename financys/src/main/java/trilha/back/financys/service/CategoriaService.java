@@ -2,6 +2,7 @@ package trilha.back.financys.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import trilha.back.financys.repository.CategoriaRepository;
@@ -16,16 +17,10 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository repository;
 
-    public Long createNewCategoria(Categoria categoria){
-        Categoria categoria1 = new Categoria();
+    public ResponseEntity<Categoria> createNewCategoria(Categoria categoria){
 
-        //categoria1.setId(categoria.getId());
-        categoria1.setName(categoria.getName());
-        categoria1.setDescription(categoria.getDescription());
-
-        categoria1 = repository.save(categoria1);
-
-        return categoria1.getId();
+        repository.save(categoria);
+        return ResponseEntity.ok().body(categoria);
     }
 
     public List<Categoria>getAllCategoria(){
@@ -53,6 +48,13 @@ public class CategoriaService {
         categoryToUpdate.setDescription(categoryToUpdateRequest.getDescription());
 
         return categoryToUpdate;
+
+    }
+
+    public String idCategoriaByName(Long idCategory){
+        Categoria categoria = repository.findById(idCategory).orElseThrow();
+
+        return categoria.getName();
 
     }
 

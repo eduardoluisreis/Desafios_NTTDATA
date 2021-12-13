@@ -22,7 +22,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("trilha.back.financys"))
-                .paths(regex("/categorias.*"))
+                .paths(regex("/.*"))
                 .build()
                 .apiInfo(metaInfo());
     }

@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7dd8fa-46a3-4a29-9513-dba8de2aabbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trilha/back/financys/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trilha/back/financys/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/trilha/back/financys/controller/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trilha/back/financys/controller/CategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trilha/back/financys/controller/LancamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trilha/back/financys/controller/LancamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trilha/back/financys/service/CategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trilha/back/financys/service/CategoriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trilha/back/financys/service/LancamentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trilha/back/financys/service/LancamentoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

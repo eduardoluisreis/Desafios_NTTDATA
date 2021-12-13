@@ -2,6 +2,7 @@ package trilha.back.financys.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import trilha.back.financys.repository.CategoriaRepository;
 import trilha.back.financys.repository.LancamentoRepository;
@@ -21,21 +22,13 @@ public class LancamentoService {
     private CategoriaRepository categoriaRepository;
     //private Object NotFoundException;
 
-    public Long createNewLancamento(Lancamento lancamento) {
-        Lancamento lancamento1 = new Lancamento();
-
-        lancamento1.setId(lancamento.getId());
-        lancamento1.setName(lancamento.getName());
-        lancamento1.setDescription(lancamento.getDescription());
-        lancamento1.setType(lancamento.getType());
-        lancamento1.setAmount(lancamento.getAmount());
-        lancamento1.setDate(lancamento.getDate());
-        lancamento1.isPaid(lancamento.getPaid());
-        lancamento1.setCategoryid(lancamento.getCategoryid());
-
-        lancamento1 = lancamentoRepository.save(lancamento1);
-
-        return lancamento1.getId();
+    public ResponseEntity<Lancamento> createNewLancamento(Lancamento lancamento) {
+        if (validateEntryById(lancamento.getCategoryid())){
+            return  ResponseEntity.ok(lancamentoRepository.save(lancamento));
+        }else {
+            System.out.println("Não existe categoria para este lancamento");
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     public List<Lancamento> getAllLancamento() {
@@ -53,7 +46,7 @@ public class LancamentoService {
         return requestedLancamento.get();
     }
 
-    @Transactional
+
     public Lancamento updateLancamento(Long id, Lancamento lancamentoToUpdateRequest){
         Optional<Lancamento> lancamentoFromDatabase = lancamentoRepository.findById(id);
         if (lancamentoFromDatabase.isEmpty()){
